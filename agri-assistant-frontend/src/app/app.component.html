@@ -1,0 +1,56 @@
+<div class="app-shell">
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a routerLink="/" class="nav-brand">
+        <span class="brand-icon">🌾</span>
+        <span class="brand-text">AgriAssist <span class="brand-ai">AI</span></span>
+      </a>
+
+      <button class="nav-toggle" (click)="menuOpen = !menuOpen" [class.active]="menuOpen" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" [class.open]="menuOpen">
+        <li>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="menuOpen=false">
+            <span class="link-icon">🏠</span> Home
+          </a>
+        </li>
+        <li>
+          <a routerLink="/soil" routerLinkActive="active" (click)="menuOpen=false">
+            <span class="link-icon">🪨</span> Soil Analysis
+          </a>
+        </li>
+        <li>
+          <a routerLink="/crop" routerLinkActive="active" (click)="menuOpen=false">
+            <span class="link-icon">🌿</span> Crop Analysis
+          </a>
+        </li>
+        <li>
+          <a routerLink="/dashboard" routerLinkActive="active" (click)="menuOpen=false">
+            <span class="link-icon">📊</span> Dashboard
+          </a>
+        </li>
+        <li>
+          <a routerLink="/history" routerLinkActive="active" (click)="menuOpen=false">
+            <span class="link-icon">📋</span> History
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="main-content">
+    <router-outlet />
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>🌾 AgriAssist AI — Empowering Farmers with Artificial Intelligence</p>
+      <p class="footer-sub">Powered by Google Gemini • Built with Spring Boot & Angular</p>
+    </div>
+  </footer>
+</div>
